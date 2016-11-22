@@ -18,11 +18,13 @@ public class TidyUp : EditorWindow
     [MenuItem("Assets/Initialize Project Folders", false, 1)]
     private static void InitializeProjectFolders()
     {
-        // string guid = AssetDatabase.CreateFolder("Assets", "My Folder");
-        // string newFolderPath = AssetDatabase.GUIDToAssetPath(guid);
-
         foreach (FolderStructure _folderName in Enum.GetValues(typeof(FolderStructure)))
         {
+            bool isExists = AssetDatabase.IsValidFolder("Assets/" + _folderName.ToString());
+            if (isExists) //Skip Creating folder if it's already Exist
+                continue;
+
+            //Otherwise Create Folder
             AssetDatabase.CreateFolder("Assets", _folderName.ToString());
         }
     }
