@@ -1,8 +1,16 @@
-// Used for Project Folder Structure
+//-----------------------------------------------------------------
+// This script Used for storing the default Project Folder Structure.
+//-----------------------------------------------------------------
+
 public enum FolderStructure
 {
     _Scenes,
-    Scripts,
+    _ImportedAssets,
+    Animation,
+    Audio,
+    Fonts,
+    Materials,
     Prefabs,
-    Models,
+    Scripts,
+    Textures,
 }
