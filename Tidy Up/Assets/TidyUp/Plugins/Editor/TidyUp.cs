@@ -86,4 +86,12 @@ public class TidyUp : EditorWindow
             }
         }
     }
+
+    [MenuItem("Tidy Up/Options")]
+    private static void Options()
+    {
+        TidyUpSettingUI opWindow = (TidyUpSettingUI)EditorWindow.GetWindow(typeof(TidyUpSettingUI), false, "TidyUp Setting", true);
+        opWindow.Show();
+    }
+
 }
