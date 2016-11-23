@@ -1,3 +1,7 @@
+//-----------------------------------------------------------------
+// This script Used for handles the Settings GUI.
+//-----------------------------------------------------------------
+
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,8 +25,6 @@ public class TidyUpSettingUI : EditorWindow
 
         EditorGUILayout.PropertyField(stringsProperty, true); // True means show children
 
-
         serializedObject.ApplyModifiedProperties(); // Remember to apply modified properties
-
     }
 }
