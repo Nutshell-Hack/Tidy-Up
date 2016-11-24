@@ -16,6 +16,13 @@ public class FolderTemplate
 public class FolderTemplateList
 {
     public List<FolderTemplate> folderTemplate = new List<FolderTemplate>();
+
+    //Constructors
+    public FolderTemplateList() { }
+    public FolderTemplateList(List<FolderTemplate> folderTemplateList)
+    {
+        this.folderTemplate = folderTemplateList;
+    }
 }
 
 public enum FolderStructure

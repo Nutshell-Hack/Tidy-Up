@@ -4,7 +4,9 @@
 // TODO: 
 // [X] Initialize Project Folders			Main Function
 // [X] Clean Up My Mess			            Main Function
-// [ ] Create My Own Style                  Main Function
+// [X] Create My Own Style                  Main Function
+// [ ] Import/Export Setting                New Function
+// [ ] Reset Setting                        New Function
 //
 //-----------------------------------------------------------------
 
@@ -78,30 +80,26 @@ public class TidyUpCore
         }
     }
 
-    internal static void LoadSetting()
+    internal static FolderTemplateList LoadSetting()
     {
         string json = File.ReadAllText(Path.Combine(Application.dataPath, pathToResource));
 
-        //retreive JSON to object
-        folderTemplateList = JsonUtility.FromJson<FolderTemplateList>(json);
+        folderTemplateList = JsonUtility.FromJson<FolderTemplateList>(json);    //retrieve JSON to object
 
-        //test
-        foreach (var item in folderTemplateList.folderTemplate)
-        {
-            Debug.Log(item.folderName);
-        }
+        return folderTemplateList;
     }
-    internal static void StoreSetting()
+    internal static void StoreSetting(FolderTemplateList folderTemplate)
     {
-        //save as JSON
-        //        string json = JsonUtility.ToJson(folderTemplateList);
+        string json = JsonUtility.ToJson(folderTemplate); //save as JSON
 
-        //retrieve JSON to object
-        //folderTemplateList = JsonUtility.FromJson<List<FolderTemplate>>(json);
+        File.WriteAllText(Application.dataPath + "/" + pathToResource, json); //store json to file
+#if UNITY_EDITOR
+        UnityEditor.AssetDatabase.Refresh();
+#endif
     }
 
-    //for testing purpose
-    internal static void testSetting()
+    // for testing purpose
+    internal static void RestSetting()
     {
         foreach (var item in Enum.GetValues(typeof(FolderStructure))) //populate list with enum data
         {

@@ -32,11 +32,13 @@ public class TidyUp : EditorWindow
     [MenuItem("Tidy Up/Options")]
     private static void Options()
     {
-        TidyUpSettingUI opWindow = (TidyUpSettingUI)EditorWindow.GetWindow(typeof(TidyUpSettingUI), false, "TidyUp Setting", true);
-        opWindow.Show();
+        //TidyUpSettingUI opWindow = (TidyUpSettingUI)EditorWindow.GetWindow(typeof(TidyUpSettingUI), false, "TidyUp Setting", true);
 
-        //Testing Purpose
-        TidyUpCore.LoadSetting();
+        var editorAsm = typeof(Editor).Assembly;
+        var inspWndType = editorAsm.GetType("UnityEditor.InspectorWindow"); //get type of InspectorWindow
+        TidyUpSettingUI opWindow = EditorWindow.GetWindow<TidyUpSettingUI>("TidyUp Setting", true, inspWndType);
+
+        opWindow.Show();
     }
 
 }
