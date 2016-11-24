@@ -34,6 +34,9 @@ public class TidyUp : EditorWindow
     {
         TidyUpSettingUI opWindow = (TidyUpSettingUI)EditorWindow.GetWindow(typeof(TidyUpSettingUI), false, "TidyUp Setting", true);
         opWindow.Show();
+
+        //Testing Purpose
+        TidyUpCore.LoadSetting();
     }
 
 }

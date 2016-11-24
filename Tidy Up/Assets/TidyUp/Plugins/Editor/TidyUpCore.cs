@@ -14,6 +14,9 @@ using UnityEditor;
 using UnityEngine;
 public class TidyUpCore
 {
+    public static FolderTemplateList folderTemplateList = new FolderTemplateList();
+    private static string pathToResource = "TidyUp/Plugins/Editor/Data.json";
+
     internal static void CreateFolders()
     {
         foreach (FolderStructure _folderName in Enum.GetValues(typeof(FolderStructure)))
@@ -73,5 +76,49 @@ public class TidyUpCore
                     "Assets/" + FolderStructure.Scripts.ToString() + "/" + file.Name);
             }
         }
+    }
+
+    internal static void LoadSetting()
+    {
+        string json = File.ReadAllText(Path.Combine(Application.dataPath, pathToResource));
+
+        //retreive JSON to object
+        folderTemplateList = JsonUtility.FromJson<FolderTemplateList>(json);
+
+        //test
+        foreach (var item in folderTemplateList.folderTemplate)
+        {
+            Debug.Log(item.folderName);
+        }
+    }
+    internal static void StoreSetting()
+    {
+        //save as JSON
+        //        string json = JsonUtility.ToJson(folderTemplateList);
+
+        //retrieve JSON to object
+        //folderTemplateList = JsonUtility.FromJson<List<FolderTemplate>>(json);
+    }
+
+    //for testing purpose
+    internal static void testSetting()
+    {
+        foreach (var item in Enum.GetValues(typeof(FolderStructure))) //populate list with enum data
+        {
+            FolderTemplate FT = new FolderTemplate();
+            FT.folderName = item.ToString();
+            FT.folderPath = "/";
+
+            folderTemplateList.folderTemplate.Add(FT);
+        }
+
+        string json = JsonUtility.ToJson(folderTemplateList); //convert list to json string
+        //Debug.Log(json);
+
+        File.WriteAllText(Application.dataPath + "/" + pathToResource, json); //store json to file
+
+#if UNITY_EDITOR
+        UnityEditor.AssetDatabase.Refresh();
+#endif
     }
 }
