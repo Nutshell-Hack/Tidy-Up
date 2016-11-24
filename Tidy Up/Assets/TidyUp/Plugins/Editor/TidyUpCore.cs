@@ -6,7 +6,7 @@
 // [X] Clean Up My Mess			            Main Function
 // [X] Create My Own Style                  Main Function
 // [ ] Import/Export Setting                New Function
-// [ ] Reset Setting                        New Function
+// [X] Reset Setting                        New Function
 //
 //-----------------------------------------------------------------
 
@@ -21,15 +21,20 @@ public class TidyUpCore
 
     internal static void CreateFolders()
     {
-        foreach (FolderStructure _folderName in Enum.GetValues(typeof(FolderStructure)))
+        folderTemplate = LoadSetting(); //populate folderTemplate with data
+
+        foreach (var _folder in folderTemplate.folderTemplateList)
         {
-            bool isExists = AssetDatabase.IsValidFolder("Assets/" + _folderName.ToString());
+            bool isExists = AssetDatabase.IsValidFolder("Assets" + _folder.folderName);
             if (isExists) //Skip Creating folder if it's already Exist
                 continue;
 
             //Otherwise Create Folder
-            AssetDatabase.CreateFolder("Assets", _folderName.ToString());
+            Directory.CreateDirectory(Path.Combine(Application.dataPath + _folder.folderPath, _folder.folderName));
         }
+#if UNITY_EDITOR
+        UnityEditor.AssetDatabase.Refresh();
+#endif
     }
 
     internal static void CleanRootDirectory()
@@ -82,7 +87,11 @@ public class TidyUpCore
 
     internal static FolderTemplate LoadSetting()
     {
-        string json = File.ReadAllText(Path.Combine(Application.dataPath, pathToResource));
+        string json = "";
+        try
+        { json = File.ReadAllText(Path.Combine(Application.dataPath, pathToResource)); }
+        catch (System.Exception) //In case Data.json  deleted somehow
+        { RestSetting(); }
 
         folderTemplate = JsonUtility.FromJson<FolderTemplate>(json);    //retrieve JSON to object
 
@@ -92,7 +101,7 @@ public class TidyUpCore
     {
         string json = JsonUtility.ToJson(template); //save as JSON
 
-        File.WriteAllText(Application.dataPath + "/" + pathToResource, json); //store json to file
+        File.WriteAllText(Path.Combine(Application.dataPath, pathToResource), json); //store json to file
 #if UNITY_EDITOR
         UnityEditor.AssetDatabase.Refresh();
 #endif
@@ -101,19 +110,20 @@ public class TidyUpCore
     // for testing purpose
     internal static void RestSetting()
     {
+        folderTemplate.folderTemplateList.Clear(); //make sure the list is empty 
+
         foreach (var item in Enum.GetValues(typeof(FolderStructure))) //populate list with enum data
         {
             Folder FT = new Folder();
             FT.folderName = item.ToString();
-            FT.folderPath = "/";
+            FT.folderPath = @"\";
 
             folderTemplate.folderTemplateList.Add(FT);
         }
 
         string json = JsonUtility.ToJson(folderTemplate); //convert list to json string
-        //Debug.Log(json);
 
-        File.WriteAllText(Application.dataPath + "/" + pathToResource, json); //store json to file
+        File.WriteAllText(Path.Combine(Application.dataPath, pathToResource), json); //store json to file
 
 #if UNITY_EDITOR
         UnityEditor.AssetDatabase.Refresh();
