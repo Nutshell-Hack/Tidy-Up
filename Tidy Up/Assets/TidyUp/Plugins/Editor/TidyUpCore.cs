@@ -16,7 +16,7 @@ using UnityEditor;
 using UnityEngine;
 public class TidyUpCore
 {
-    public static FolderTemplateList folderTemplateList = new FolderTemplateList();
+    public static FolderTemplate folderTemplate = new FolderTemplate();
     private static string pathToResource = "TidyUp/Plugins/Editor/Data.json";
 
     internal static void CreateFolders()
@@ -80,17 +80,17 @@ public class TidyUpCore
         }
     }
 
-    internal static FolderTemplateList LoadSetting()
+    internal static FolderTemplate LoadSetting()
     {
         string json = File.ReadAllText(Path.Combine(Application.dataPath, pathToResource));
 
-        folderTemplateList = JsonUtility.FromJson<FolderTemplateList>(json);    //retrieve JSON to object
+        folderTemplate = JsonUtility.FromJson<FolderTemplate>(json);    //retrieve JSON to object
 
-        return folderTemplateList;
+        return folderTemplate;
     }
-    internal static void StoreSetting(FolderTemplateList folderTemplate)
+    internal static void StoreSetting(FolderTemplate template)
     {
-        string json = JsonUtility.ToJson(folderTemplate); //save as JSON
+        string json = JsonUtility.ToJson(template); //save as JSON
 
         File.WriteAllText(Application.dataPath + "/" + pathToResource, json); //store json to file
 #if UNITY_EDITOR
@@ -103,14 +103,14 @@ public class TidyUpCore
     {
         foreach (var item in Enum.GetValues(typeof(FolderStructure))) //populate list with enum data
         {
-            FolderTemplate FT = new FolderTemplate();
+            Folder FT = new Folder();
             FT.folderName = item.ToString();
             FT.folderPath = "/";
 
-            folderTemplateList.folderTemplate.Add(FT);
+            folderTemplate.folderTemplateList.Add(FT);
         }
 
-        string json = JsonUtility.ToJson(folderTemplateList); //convert list to json string
+        string json = JsonUtility.ToJson(folderTemplate); //convert list to json string
         //Debug.Log(json);
 
         File.WriteAllText(Application.dataPath + "/" + pathToResource, json); //store json to file

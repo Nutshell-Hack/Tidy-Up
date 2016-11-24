@@ -8,8 +8,8 @@ using UnityEditor;
 using UnityEngine;
 public class TidyUpSettingUI : EditorWindow
 {
-    public FolderTemplateList folderTemplateList;
-    public List<FolderTemplate> list;
+    public FolderTemplate folderTemplate;
+    public List<Folder> list;
 
     ScriptableObject target;
     SerializedObject serializedObject;
@@ -17,8 +17,8 @@ public class TidyUpSettingUI : EditorWindow
 
     void OnFocus()
     {
-        folderTemplateList = TidyUpCore.LoadSetting(); //LoadSetting
-        list = folderTemplateList.folderTemplate;
+        folderTemplate = TidyUpCore.LoadSetting(); //LoadSetting
+        list = folderTemplate.folderTemplateList;
 
         // "target" can be any class derived from ScriptableObject 
         // (could be EditorWindow, MonoBehaviour, etc)
@@ -38,7 +38,7 @@ public class TidyUpSettingUI : EditorWindow
         GUILayout.Space(10);
         if (GUILayout.Button("Save Settings"))
         {
-            TidyUpCore.StoreSetting(folderTemplateList);
+            TidyUpCore.StoreSetting(folderTemplate);
         }
     }
 }

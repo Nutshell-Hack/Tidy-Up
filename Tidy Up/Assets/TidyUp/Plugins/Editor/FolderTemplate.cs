@@ -6,27 +6,27 @@ using System;
 using System.Collections.Generic;
 
 [Serializable]
-public class FolderTemplate
+public class Folder
 {
     public string folderName;
     public string folderPath;
 }
 
 [System.Serializable]
-public class FolderTemplateList
+public class FolderTemplate
 {
-    public List<FolderTemplate> folderTemplate = new List<FolderTemplate>();
+    public List<Folder> folderTemplateList = new List<Folder>();
 
     //Constructors
-    public FolderTemplateList() { }
-    public FolderTemplateList(List<FolderTemplate> folderTemplateList)
+    public FolderTemplate() { }
+    public FolderTemplate(List<Folder> folderTemplateList)
     {
-        this.folderTemplate = folderTemplateList;
+        this.folderTemplateList = folderTemplateList;
     }
 }
 
 public enum FolderStructure
-{
+{ //Backup Structure
     _Scenes,
     _ImportedAssets,
     Animation,
