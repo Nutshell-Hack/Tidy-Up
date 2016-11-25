@@ -5,9 +5,9 @@
 // [X] Initialize Project Folders			Main Function
 // [X] Clean Up My Mess			            Main Function
 // [X] Create My Own Style                  Main Function
-// [ ] Import/Export Setting                New Function
+// [X] Import/Export Setting                New Function
 // [X] Reset Setting                        New Function
-//
+// [ ] Link `CleanRootDirectory` with the new UI
 //-----------------------------------------------------------------
 
 using System;
@@ -85,13 +85,17 @@ public class TidyUpCore
         }
     }
 
+    /// <summary>
+    /// LoadSetting() is called from `TidyUpSettingUI` to read Data.json file
+    /// and populate the FolderTemplateList with data
+    /// </summary>
     internal static FolderTemplate LoadSetting()
     {
         string json = "";
         try
         { json = File.ReadAllText(Path.Combine(Application.dataPath, pathToResource)); }
         catch (System.Exception) //In case Data.json  deleted somehow
-        { RestSetting(); }
+        { RestSetting(); return new FolderTemplate(); } //Reset Data file
 
         folderTemplate = JsonUtility.FromJson<FolderTemplate>(json);    //retrieve JSON to object
 
@@ -105,6 +109,55 @@ public class TidyUpCore
 #if UNITY_EDITOR
         UnityEditor.AssetDatabase.Refresh();
 #endif
+    }
+
+    internal static void ImportSetting()
+    {
+        string path = EditorUtility.OpenFilePanel("Import New Setting", Application.dataPath, "json");
+
+        if (path.Length != 0)
+        {
+            string json = "";
+            try
+            {
+                json = File.ReadAllText(path);
+
+                //wrapper the json into `FolderTemplate` to make sure it's valid data file
+                folderTemplate = JsonUtility.FromJson<FolderTemplate>(json);
+                if (folderTemplate == null) //Invalid Data file
+                    throw new InvalidDataException();
+            }
+            catch (System.Exception) //In case Data.json  corrupted
+            {
+                EditorUtility.DisplayDialog("Import New Setting", "You must select a valid JSON data file!", "OK");
+                return;
+            }
+
+            File.WriteAllText(Path.Combine(Application.dataPath, pathToResource), json); //store json to file
+        }
+
+    }
+
+    internal static void ExportSetting(FolderTemplate template)
+    {
+        string path = EditorUtility.SaveFilePanel("Export Setting", Application.dataPath, "Data", "json");
+        if (path.Length != 0)
+        {
+            string json = JsonUtility.ToJson(template); //save as JSON
+            File.WriteAllText(path, json); //store json to file
+        }
+    }
+
+    /// <summary>
+    /// ClearConsole() is called on the frame when we release `folderTemplate` just before
+    /// any of the Update methods to data populate.
+    /// </summary>
+    internal static void ClearConsole()
+    {
+        // This simply does "LogEntries.Clear()" the long way:
+        var logEntries = System.Type.GetType("UnityEditorInternal.LogEntries,UnityEditor.dll");
+        var clearMethod = logEntries.GetMethod("Clear", System.Reflection.BindingFlags.Static | System.Reflection.BindingFlags.Public);
+        clearMethod.Invoke(null, null);
     }
 
     // for testing purpose
