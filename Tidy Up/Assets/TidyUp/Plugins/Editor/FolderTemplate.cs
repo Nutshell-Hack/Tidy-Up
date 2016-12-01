@@ -10,6 +10,7 @@ public class Folder
 {
     public string folderName;
     public string folderPath;
+    public AssetType assetType;
 }
 
 [System.Serializable]
@@ -29,11 +30,26 @@ public enum FolderStructure
 { //Backup Structure
     _Scenes,
     _ImportedAssets,
-    Animation,
+    Animations,
     Audio,
     Fonts,
     Materials,
     Prefabs,
     Scripts,
     Textures,
+}
+
+public enum AssetType
+{ //For Grouping porpuse
+    Animations,
+    Audio,
+    Graphics,
+    Materials,
+    Models,
+    Textures,
+    Fonts,
+    Prefabs,
+    Scenes,
+    Scripts,
+    Other,
 }

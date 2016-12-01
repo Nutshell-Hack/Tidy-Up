@@ -5,6 +5,7 @@
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
+
 public class TidyUpSettingUI : EditorWindow
 {
     public FolderTemplate folderTemplate;
@@ -13,6 +14,8 @@ public class TidyUpSettingUI : EditorWindow
     ScriptableObject target;
     SerializedObject serializedObject;
     SerializedProperty folderTemplateProperty;
+
+    Vector2 scrollPosition = Vector2.zero;
 
     void OnFocus()
     {
@@ -28,9 +31,12 @@ public class TidyUpSettingUI : EditorWindow
 
     void OnGUI()
     {
+        scrollPosition = GUILayout.BeginScrollView(scrollPosition, false, false); //Dynamic Scrollbar
+
         GUILayout.Label("Base Settings", EditorStyles.boldLabel);
         GUILayout.Space(10);
 
+        #region Top Setting Group
         EditorGUILayout.BeginHorizontal(); GUILayout.Space(2); //Top Setting Group
         if (GUILayout.Button("Import Setting"))
         {
@@ -52,12 +58,18 @@ public class TidyUpSettingUI : EditorWindow
             TidyUp.Options(); //Instantiate new instance
         }
         GUILayout.Space(2); EditorGUILayout.EndHorizontal();
+        #endregion
 
+
+        #region Folder Template Setting
         GUILayout.Space(10);    //Folder Template Setting
         EditorGUILayout.PropertyField(folderTemplateProperty, new GUIContent("Folders Template List"), true); // True means show children
         serializedObject.ApplyModifiedProperties(); // Remember to apply modified properties
         TidyUpCore.ClearConsole(); //Clear Console Just to skip serializedObject Destroyed msg!
+        #endregion
 
+
+        #region Button Setting Group
         GUILayout.Space(10); //Button Setting Group
         EditorGUILayout.BeginHorizontal(); GUILayout.Space(Screen.width / 4);
         GUI.backgroundColor = Color.grey;
@@ -66,5 +78,8 @@ public class TidyUpSettingUI : EditorWindow
             TidyUpCore.StoreSetting(folderTemplate);
         }
         GUILayout.Space(10); EditorGUILayout.EndHorizontal();
+        #endregion
+
+        GUILayout.EndScrollView();
     }
 }

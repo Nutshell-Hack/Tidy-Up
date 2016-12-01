@@ -186,6 +186,10 @@ GameObject:
   m_Component:
   - 4: {fileID: 678198765}
   - 108: {fileID: 678198764}
+  - 114: {fileID: 678198769}
+  - 114: {fileID: 678198768}
+  - 114: {fileID: 678198767}
+  - 114: {fileID: 678198766}
   m_Layer: 0
   m_Name: Directional Light
   m_TagString: Untagged
@@ -240,3 +244,47 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 1
+--- !u!114 &678198766
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 678198763}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf456d2130d78d142a608da47054e332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &678198767
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 678198763}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: edc3b360f6b58814b92dc98fe9fe78a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &678198768
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 678198763}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b12da12d61255f6419554c76193062b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &678198769
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 678198763}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1b32c91590432c4e91f1fce9b035c09, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

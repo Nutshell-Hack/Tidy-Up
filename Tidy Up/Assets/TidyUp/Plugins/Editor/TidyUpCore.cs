@@ -56,7 +56,7 @@ public class TidyUpCore
             {
                 AssetDatabase.MoveAsset(
                     "Assets/" + file.Name,
-                    "Assets/" + FolderStructure.Animation.ToString() + "/" + file.Name);
+                    "Assets/" + FolderStructure.Animations.ToString() + "/" + file.Name);
             }
             else if (extension == ".ttf" || extension == ".ttf.meta")   //if file is Font
             {
@@ -170,6 +170,7 @@ public class TidyUpCore
             Folder FT = new Folder();
             FT.folderName = item.ToString();
             FT.folderPath = @"\";
+            FT.assetType = AssetType.Other;
 
             folderTemplate.folderTemplateList.Add(FT);
         }
