@@ -1,0 +1,54 @@
+{
+    "folderTemplateList": [
+        {
+            "folderName": "_Scenes",
+            "folderPath": "\\",
+            "assetType": 7
+        },
+        {
+            "folderName": "_ImportedAssets",
+            "folderPath": "\\",
+            "assetType": 9
+        },
+        {
+            "folderName": "Animations",
+            "folderPath": "\\",
+            "assetType": 0
+        },
+        {
+            "folderName": "Audio",
+            "folderPath": "\\",
+            "assetType": 1
+        },
+        {
+            "folderName": "Fonts",
+            "folderPath": "\\",
+            "assetType": 2
+        },
+        {
+            "folderName": "Materials",
+            "folderPath": "\\Graphics\\",
+            "assetType": 3
+        },
+        {
+            "folderName": "Models",
+            "folderPath": "\\Graphics\\",
+            "assetType": 4
+        },
+        {
+            "folderName": "Prefabs",
+            "folderPath": "\\",
+            "assetType": 5
+        },
+        {
+            "folderName": "Scripts",
+            "folderPath": "\\",
+            "assetType": 8
+        },
+        {
+            "folderName": "Textures",
+            "folderPath": "\\Graphics\\",
+            "assetType": 6
+        }
+    ]
+}
