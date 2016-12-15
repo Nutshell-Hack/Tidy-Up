@@ -2,35 +2,62 @@
   Tidy Up 🎮
 <img /></h1>
 
-A Tidy Up is [Unity][1] engine Editor Extensions written in **C#** .
+**TidyUp** is a free Extensions for the [Unity][3] Engine Editor, written in **C#** .
 <p align="center">  
-  <img src="https://github.com/Marloxo/Tidy-Up/Images/cleaning_logo1.jpg" height="300" width="320"/></p>
+  <img src="https://github.com/Nutshell-Hack/Tidy-Up/Resource/Logo/TidyUp.jpg" height="300" width="320"/></p>
 
-##Table of Contents :book: :construction:
+**TidyUp** is powerful yet easy to use visual organising toolkit designed
+to organise your creative house with the growing of your project!
+and help you bring your game Asset to life in the shortest possible time.
+
+
+##Table Of Contents :book: :construction:
+- [Who is this tool for?](#)
+- [Key features](#)
+- [Download](#)
 - [Software](#)
 - [How to contribute](#)
-- [Documentation Guide](#)
 - [To Do List](#)
 - [License](#)
 
+##Who is this tool for?
+Basically for anyone with a game idea but not the time,
+Whether you're a programmer, game designer, texture artist or 3D modeller,<br>
+Whether you urgently need to create a new Unity3D project or even you work on your existing project and things get messy but you don't want to spend a lot of time organising folder structure,<br>
+**TidyUp** is probably the tool you have been waiting for.
+
+##Key features:
+- Initialize Project Folders
+- Clean Up My Mess
+- Create My Own Style
+- Import/Export Setting
+- Reset Setting
+
+##Download
+Download from the Unity Asset Store [here][1]. The newest release can be found in the /Builds/ folder or under [releases][2].
+
 ##Software :space_invader:
-This project runs on the [Unity][1] engine.
+This project runs on the [Unity][3] engine.
 Make sure to have the newest version installed before running the project.
 
-The project folder is called "Tidy Up".
+The Unity project folder is called "Tidy Up".<br>
+The Source Code project folder is called "Lib/TidyUp".
 
 ##How to contribute :octocat:
-Contributions welcome! Read the [contribution guidelines](/CONTRIBUTING.md) first.
+Contributions welcome! Read the [contribution guidelines][4] first.
 
 ##TO-DO List :clipboard:
 Contribute some ;)
 
 ##Copyright   :pencil:
-[![MIT Licence][2]][3]
+[![MIT Licence][5]][6]
 
-This project is released into the public domain. For more information see  [LICENSE][4].
+This project is released into the public domain. For more information see  [LICENSE][7].
 
-[1]: http://unity3d.com "Unity Website"
-[2]: https://img.shields.io/github/license/mashape/apistatus.svg?maxAge=2592000
-[3]: https://opensource.org/licenses/mit-license.php
-[4]: /LICENSE
+[1]: http://u3d.as/EVL
+[2]: https://github.com/Nutshell-Hack/Tidy-Up/releases
+[3]: http://unity3d.com "Unity Website"
+[4]: https://guides.github.com/activities/contributing-to-open-source
+[5]: https://img.shields.io/github/license/mashape/apistatus.svg?maxAge=2592000
+[6]: https://opensource.org/licenses/mit-license.php
+[7]: /LICENSE

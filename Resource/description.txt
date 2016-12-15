@@ -1,0 +1,28 @@
+<strong>TidyUp</strong> is powerful yet easy to use visual organising toolkit designed
+to help you bring your game Asset to life in the shortest possible time.
+<br><br>
+
+Whether you're a programmer, game designer, texture artist or 3D modeller,<br>
+<strong>TidyUp</strong> is a great toolkit help you to organise your creative house
+with the growing of your project!
+<br><br>
+
+<strong>Key features: </strong><br>
+- Initialize Project Folders<br>
+- Clean Up My Mess<br>
+- Create My Own Style<br>
+- Import/Export Setting<br>
+- Reset Setting<br>
+
+
+<br><br>
+<strong>Who is this tool for? </strong>
+<br>
+Basically for anyone with a game idea but not the time,
+Whether you urgently need to create a new Unity3D project or even you work on your existing project and things get messy but you don't want to spend a lot of time organising folder structure,<br>
+<strong>TidyUp</strong> is probably the tool you have been waiting for.
+<br><br>
+This project is hosted on <a href="https://github.com/Nutshell-Hack/Tidy-Up">GitHub</a>, <br>
+where we would love to have your feedback through its Issue system.<br>
+Also, If you want to contribute to a project your help is very welcome.
+Enjoy :)
