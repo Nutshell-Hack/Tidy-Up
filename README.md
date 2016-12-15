@@ -4,7 +4,7 @@
 
 **TidyUp** is a free Extensions for the [Unity][3] Engine Editor, written in **C#** .
 <p align="center">  
-  <img src="https://github.com/Nutshell-Hack/Tidy-Up/Resource/Logo/TidyUp.jpg" height="300" width="320"/></p>
+  <img src="https://github.com/Nutshell-Hack/Tidy-Up/blob/master/Resource/Logo/TidyUp.jpg" height="240" width="320"/></p>
 
 **TidyUp** is powerful yet easy to use visual organising toolkit designed
 to organise your creative house with the growing of your project!
@@ -12,13 +12,13 @@ and help you bring your game Asset to life in the shortest possible time.
 
 
 ##Table Of Contents :book: :construction:
-- [Who is this tool for?](#)
-- [Key features](#)
-- [Download](#)
-- [Software](#)
-- [How to contribute](#)
-- [To Do List](#)
-- [License](#)
+- [Who is this tool for?](https://github.com/Nutshell-Hack/Tidy-Up#who-is-this-tool-for)
+- [Key features](https://github.com/Nutshell-Hack/Tidy-Up#key-features)
+- [Download](https://github.com/Nutshell-Hack/Tidy-Up#download)
+- [Software](https://github.com/Nutshell-Hack/Tidy-Up#software-space_invader)
+- [How to contribute](https://github.com/Nutshell-Hack/Tidy-Up#how-to-contribute-octocat)
+- [To Do List](https://github.com/Nutshell-Hack/Tidy-Up#to-do-list-clipboard)
+- [License](https://github.com/Nutshell-Hack/Tidy-Up#copyright---pencil)
 
 ##Who is this tool for?
 Basically for anyone with a game idea but not the time,
