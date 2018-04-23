@@ -11,7 +11,7 @@ to organise your creative house with the growing of your project!
 and help you bring your game Asset to life in the shortest possible time.
 
 
-##Table Of Contents :book: :construction:
+## Table Of Contents :book: :construction:
 - [Who is this tool for?](https://github.com/Nutshell-Hack/Tidy-Up#who-is-this-tool-for)
 - [Key features](https://github.com/Nutshell-Hack/Tidy-Up#key-features)
 - [Download](https://github.com/Nutshell-Hack/Tidy-Up#download)
@@ -20,20 +20,20 @@ and help you bring your game Asset to life in the shortest possible time.
 - [To Do List](https://github.com/Nutshell-Hack/Tidy-Up#to-do-list-clipboard)
 - [License](https://github.com/Nutshell-Hack/Tidy-Up#copyright---pencil)
 
-##Who is this tool for?
+## Who is this tool for?
 Basically for anyone with a game idea but not the time,
 Whether you're a programmer, game designer, texture artist or 3D modeller,<br>
 Whether you urgently need to create a new Unity3D project or even you work on your existing project and things get messy but you don't want to spend a lot of time organising folder structure,<br>
 **TidyUp** is probably the tool you have been waiting for.
 
-##Key features:
+## Key features:
 - Initialize Project Folders
 - Clean Up My Mess
 - Create My Own Style
 - Import/Export Setting
 - Reset Setting
 
-##Download
+## Download
 Download from the Unity Asset Store [here][1]. The newest release can be found in the /Builds/ folder or under [releases][2].
 
 ##Software :space_invader:
@@ -43,13 +43,13 @@ Make sure to have the newest version installed before running the project.
 The Unity project folder is called "Tidy Up".<br>
 The Source Code project folder is called "Lib/TidyUp".
 
-##How to contribute :octocat:
+## How to contribute :octocat:
 Contributions welcome! Read the [contribution guidelines][4] first.
 
-##TO-DO List :clipboard:
+## TO-DO List :clipboard:
 Contribute some ;)
 
-##Copyright   :pencil:
+## Copyright   :pencil:
 [![MIT Licence][5]][6]
 
 This project is released into the public domain. For more information see  [LICENSE][7].
